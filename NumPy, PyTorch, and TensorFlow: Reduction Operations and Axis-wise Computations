@@ -1,0 +1,155 @@
+TensorFlow
+
+import tensorflow as tf
+
+arr = tf.constant([[1, 3, 5],
+                   [2, 4, 6]], dtype=tf.float32)
+
+# Maximum along a specific axis
+max_axis_0 = tf.reduce_max(arr, axis=0)  # Maximum along axis 0 (column-wise)
+max_axis_1 = tf.reduce_max(arr, axis=1)  # Maximum along axis 1 (row-wise)
+
+# Minimum along a specific axis
+min_axis_0 = tf.reduce_min(arr, axis=0)  # Minimum along axis 0 (column-wise)
+min_axis_1 = tf.reduce_min(arr, axis=1)  # Minimum along axis 1 (row-wise)
+
+# Mean along a specific axis
+mean_axis_0 = tf.reduce_mean(arr, axis=0)  # Mean along axis 0 (column-wise)
+mean_axis_1 = tf.reduce_mean(arr, axis=1)  # Mean along axis 1 (row-wise)
+
+# Product along a specific axis
+product_axis_0 = tf.reduce_prod(arr, axis=0)  # Product along axis 0 (column-wise)
+product_axis_1 = tf.reduce_prod(arr, axis=1)  # Product along axis 1 (row-wise)
+
+# Sum along a specific axis
+sum_axis_0 = tf.reduce_sum(arr, axis=0)  # Sum along axis 0 (column-wise)
+sum_axis_1 = tf.reduce_sum(arr, axis=1)  # Sum along axis 1 (row-wise)
+
+# Variance along a specific axis
+variance_axis_0 = tf.math.reduce_variance(arr, axis=0)  # Variance along axis 0 (column-wise)
+variance_axis_1 = tf.math.reduce_variance(arr, axis=1)  # Variance along axis 1 (row-wise)
+
+# Standard deviation along a specific axis
+stddev_axis_0 = tf.math.reduce_std(arr, axis=0)  # Standard deviation along axis 0 (column-wise)
+stddev_axis_1 = tf.math.reduce_std(arr, axis=1)  # Standard deviation along axis 1 (row-wise)
+
+
+
+
+
+
+
+PyTorch
+
+import torch
+
+arr = torch.tensor([[1, 3, 5],
+                    [2, 4, 6]])
+
+# Maximum along a specific axis
+max_axis_0 = torch.max(arr, dim=0).values  # Maximum along axis 0 (column-wise)
+max_axis_1 = torch.max(arr, dim=1).values  # Maximum along axis 1 (row-wise)
+
+# Minimum along a specific axis
+min_axis_0 = torch.min(arr, dim=0).values  # Minimum along axis 0 (column-wise)
+min_axis_1 = torch.min(arr, dim=1).values  # Minimum along axis 1 (row-wise)
+
+# Mean along a specific axis
+mean_axis_0 = torch.mean(arr.float(), dim=0)  # Convert to float and calculate mean along axis 0
+mean_axis_1 = torch.mean(arr.float(), dim=1)  # Convert to float and calculate mean along axis 1
+
+# Product along a specific axis
+product_axis_0 = torch.prod(arr, dim=0)  # Product along axis 0 (column-wise)
+product_axis_1 = torch.prod(arr, dim=1)  # Product along axis 1 (row-wise)
+
+# Sum along a specific axis
+sum_axis_0 = torch.sum(arr, dim=0)  # Sum along axis 0 (column-wise)
+sum_axis_1 = torch.sum(arr, dim=1)  # Sum along axis 1 (row-wise)
+
+# Variance along a specific axis
+variance_axis_0 = torch.var(arr.float(), dim=0)  # Convert to float and calculate variance along axis 0
+variance_axis_1 = torch.var(arr.float(), dim=1)  # Convert to float and calculate variance along axis 1
+
+# Standard deviation along a specific axis
+stddev_axis_0 = torch.std(arr.float(), dim=0)  # Convert to float and calculate stddev along axis 0
+stddev_axis_1 = torch.std(arr.float(), dim=1)  # Convert to float and calculate stddev along axis 1
+
+
+
+
+
+
+NumPy
+
+import numpy as np
+
+arr = np.array([[1, 3, 5],
+                [2, 4, 6]])
+
+# Maximum along a specific axis
+max_axis_0 = np.max(arr, axis=0)  # Maximum along axis 0 (column-wise)
+max_axis_1 = np.max(arr, axis=1)  # Maximum along axis 1 (row-wise)
+
+# Minimum along a specific axis
+min_axis_0 = np.min(arr, axis=0)  # Minimum along axis 0 (column-wise)
+min_axis_1 = np.min(arr, axis=1)  # Minimum along axis 1 (row-wise)
+
+# Mean along a specific axis
+mean_axis_0 = np.mean(arr, axis=0)  # Mean along axis 0 (column-wise)
+mean_axis_1 = np.mean(arr, axis=1)  # Mean along axis 1 (row-wise)
+
+# Product along a specific axis
+product_axis_0 = np.prod(arr, axis=0)  # Product along axis 0 (column-wise)
+product_axis_1 = np.prod(arr, axis=1)  # Product along axis 1 (row-wise)
+
+# Sum along a specific axis
+sum_axis_0 = np.sum(arr, axis=0)  # Sum along axis 0 (column-wise)
+sum_axis_1 = np.sum(arr, axis=1)  # Sum along axis 1 (row-wise)
+
+# Variance along a specific axis
+variance_axis_0 = np.var(arr, axis=0)  # Variance along axis 0 (column-wise)
+variance_axis_1 = np.var(arr, axis=1)  # Variance along axis 1 (row-wise)
+
+# Standard deviation along a specific axis
+stddev_axis_0 = np.std(arr, axis=0)  # Standard deviation along axis 0 (column-wise)
+stddev_axis_1 = np.std(arr, axis=1)  # Standard deviation along axis 1 (row-wise)
+
+
+
+
+ The uses and significance of each of the reduction operations we've covered in the guide:
+
+Maximum:
+
+Use: Finding the highest value along a given axis.
+Significance: Useful for identifying the peak value in a dataset, such as finding the highest temperature recorded in a week.
+
+Minimum:
+
+Use: Finding the lowest value along a given axis.
+Significance: Important for identifying the lowest point in data, like finding the lowest stock price during a specific period.
+
+Mean:
+
+Use: Calculating the average value along a given axis.
+Significance: Provides a measure of central tendency, useful for understanding the typical value in a dataset. Often used for statistical analysis.
+Product:
+
+Use: Calculating the product of values along a given axis.
+Significance: Useful for scenarios where values need to be multiplied together, such as calculating the total cost of multiple items in a shopping cart.
+
+Sum:
+
+Use: Adding up values along a given axis.
+Significance: Provides the total value or cumulative effect of data. For instance, summing up daily sales to get the total monthly sales.
+
+Variance:
+
+Use: Calculating the variability or spread of values along a given axis.
+Significance: Helps measure how much individual values deviate from the mean. Valuable in understanding data distribution and risk assessment.
+
+Standard Deviation:
+
+Use: Measuring the dispersion or spread of values along a given axis.
+Significance: Provides insight into the data's volatility. A higher standard deviation indicates greater variability, which can be useful in finance and quality control.
+Each of these reduction operations provides a unique perspective on data, and their utility depends on the context of your analysis. By using these operations along specific axes, you can gain valuable insights into trends, patterns, and characteristics of your data. Whether you're working with numerical data, scientific measurements, financial figures, or any other type of data, these reduction operations help you extract meaningful information for decision-making and analysis.
